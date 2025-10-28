@@ -1,13 +1,12 @@
 pipeline {
-    agent any{
-
-    stages {
-        stage('Build Docker Image') {
-            steps {
-                echo "Build Docker Image"
-                bat "docker build -t kubdemoapp:v1 ."
+    agent any {
+        stages {
+            stage('Build Docker Image') {
+                steps {
+                    echo "Build Docker Image"
+                    bat "docker build -t kubdemoapp:v1 ."
+                }
             }
-        }
 
         stage('Docker Login') {
             steps {
