@@ -15,7 +15,7 @@ pipeline {
             }
         }
 
-        stage('Push Docker Image to Docker Hub') {
+        stage('Push Image to Docker Hub') {
             steps {
                 echo "Push Docker Image to Docker Hub"
                 bat "docker tag kubdemoapp:v1 ekeerthana/sample:kubeimage1"
@@ -23,7 +23,7 @@ pipeline {
             }
         }
 
-        stage('Deploy to Kubernetes') {
+        stage('Kubernetes deployment') {
             steps {
                 bat 'kubectl apply -f deployment.yaml --validate=false'
                 bat 'kubectl apply -f service.yaml'
