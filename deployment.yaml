@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubdemoapp-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: kubdemoapp
+  template:
+    metadata:
+      labels:
+        app: kubdemoapp
+    spec:
+      containers:
+        - name: kubdemoapp
+          image: ekeerthana/sample:kubeimage1   
+          ports:
+            - containerPort: 5000
