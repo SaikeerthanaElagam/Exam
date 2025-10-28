@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent any{
 
     stages {
         stage('Build Docker Image') {
@@ -39,5 +39,6 @@ pipeline {
             echo 'Pipeline failed. Please check the logs.'
         }
     }
+}
 }
 
